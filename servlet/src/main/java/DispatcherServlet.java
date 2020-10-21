@@ -57,9 +57,7 @@ public class DispatcherServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
         String path = req.getServletPath();
-        System.out.println("request for the url:" + path);
         GetDispatcher dispatcher = this.getMappings.get(path);
-        System.out.println(this.getMappings);
         if (dispatcher == null) {
             resp.sendError(404);
             return;
@@ -77,7 +75,6 @@ public class DispatcherServlet extends HttpServlet {
             resp.sendRedirect(mv.view.substring(9));
         }
         PrintWriter pw = resp.getWriter();
-        System.out.println(mv.view);
         this.viewEngine.render(mv, pw);
         pw.flush();
     }

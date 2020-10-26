@@ -1,14 +1,19 @@
 package service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserService {
+    @Autowired
     private MailService mailService;
 
-    public void setMailService(MailService mailService) {
-        this.mailService = mailService;
-    }
+//    public void setMailService(MailService mailService) {
+//        this.mailService = mailService;
+//    }
 
     private List<User> users = new ArrayList<>(List.of(
             new User(1, "bob@example.com", "password", "Bob"),

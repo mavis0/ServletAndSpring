@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:/config.properties")
 public class UserService {
 
-    @Value("A.b")
-    private String s;
+//    @Value("A.b")
+//    String s;
 
     public String hello() {
-        return s;
+        return "String";
     }
 }

@@ -25,6 +25,7 @@ import java.io.File;
 
 @Configuration
 @ComponentScan("service")
+@ComponentScan("controller")
 @EnableWebMvc
 @EnableTransactionManagement
 @PropertySource("classpath:/config.properties")
